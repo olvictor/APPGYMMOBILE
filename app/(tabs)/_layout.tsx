@@ -5,6 +5,7 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -23,15 +24,34 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
+    <Tabs.Screen
+        name="exercise"
         options={{
-          title: 'Explore',
+          title: 'exercise',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'barbell' : 'barbell-outline'} color={color} />
           ),
         }}
       />
+
+    <Tabs.Screen
+            name="calendar"
+            options={{
+              title: 'calendar',
+              tabBarIcon: ({ color, focused }) => (
+                <TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
+              ),
+            }}
+    />
+    <Tabs.Screen
+            name="progress"
+            options={{
+              title: 'progress',
+              tabBarIcon: ({ color, focused }) => (
+                <TabBarIcon name={focused ? 'bar-chart' : 'bar-chart-outline'} color={color} />
+              ),
+            }}
+    />
     </Tabs>
   );
 }
