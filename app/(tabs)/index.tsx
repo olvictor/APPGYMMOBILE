@@ -3,15 +3,8 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { MMKV , useMMKV} from 'react-native-mmkv';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../contexts/authContext';
-
-
-type User = {
-  nome: string;
-  email: string
-}
 
 
 export default function HomeScreen() {

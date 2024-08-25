@@ -4,10 +4,14 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { MMKV } from 'react-native-mmkv';
+import { View } from 'react-native-reanimated/lib/typescript/Animated';
 
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const storage = new MMKV({id:'gymapp'})
+  const user = storage.getString('user')
 
   return (
     <Tabs
@@ -47,6 +51,15 @@ export default function TabLayout() {
             name="progress"
             options={{
               title: 'progress',
+              tabBarIcon: ({ color, focused }) => (
+                <TabBarIcon name={focused ? 'bar-chart' : 'bar-chart-outline'} color={color} />
+              ),
+            }}
+    />
+     <Tabs.Screen
+            name="welcome"
+            options={{
+              title: 'welcome',
               tabBarIcon: ({ color, focused }) => (
                 <TabBarIcon name={focused ? 'bar-chart' : 'bar-chart-outline'} color={color} />
               ),
