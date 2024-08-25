@@ -3,8 +3,24 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { MMKV , useMMKV} from 'react-native-mmkv';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../contexts/authContext';
+
+
+type User = {
+  nome: string;
+  email: string
+}
+
 
 export default function HomeScreen() {
+
+
+   
+  const context = useContext(AuthContext);
+  console.log(context?.user) 
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -15,7 +31,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">{context?.user?.nome}</ThemedText>
         <HelloWave />
       </ThemedView>
     </ParallaxScrollView>

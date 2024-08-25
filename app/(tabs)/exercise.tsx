@@ -1,10 +1,13 @@
 import { HelloWave } from '@/components/HelloWave'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
-import React from 'react'
+import React, { useContext } from 'react'
 import {  StyleSheet } from 'react-native';
+import { AuthContext } from '../contexts/authContext';
 
 const exercise = () => {
+  const context = useContext(AuthContext)
+  
   return (
   <ThemedView style={styles.titleContainer}>
     <ThemedText type="title">exercise !</ThemedText>
