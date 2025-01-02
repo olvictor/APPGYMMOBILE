@@ -5,8 +5,7 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { MMKV } from 'react-native-mmkv';
-import { View } from 'react-native-reanimated/lib/typescript/Animated';
-import Welcome from './welcome';
+import Welcome from '../../components/Welcome/Welcome'
 
 
 export default function TabLayout() {

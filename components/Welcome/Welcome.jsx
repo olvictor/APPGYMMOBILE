@@ -18,7 +18,7 @@ const Welcome = () => {
     
     if(email && nome){
         storage.set('user',JSON.stringify({nome,email}))
-        // navigation.navigate('home')
+        navigation.navigate('index')
     }
 }
 
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     tittle: {
-        fontSize: 40,
+        fontSize: 30,
         marginBottom: 50
     },
     button:{
